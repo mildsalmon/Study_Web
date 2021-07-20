@@ -37,3 +37,11 @@ def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
 
     return render(request, 'polls/results.html', {'question': question})
+
+# import logging
+#
+# logger = logging.getLogger('mylogger')
+#
+# def my_view(request, arg1, arg):
+#     if bad_mojo:
+#         logger.error("Someting went worong")
