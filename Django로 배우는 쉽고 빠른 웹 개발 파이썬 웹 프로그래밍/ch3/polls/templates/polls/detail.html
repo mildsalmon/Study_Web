@@ -1,3 +1,9 @@
+<!--클래스형 뷰와 연결되는 템플릿-->
+
+{% extends "base_polls.html" %}
+
+{% block content %}
+
 <h1>{{ question.question_text }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -11,4 +17,19 @@
 <input type="submit" value="Vote" />
 </form>
 
+{% endblock content %}
 
+<!--함수형 뷰와 연결되는 템플릿-->
+
+<!--<h1>{{ question.question_text }}</h1>-->
+
+<!--{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}-->
+
+<!--<form action="{% url 'polls:vote' question.id %}" method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {% for choice in question.choice_set.all %}-->
+<!--        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />-->
+<!--        <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />-->
+<!--    {% endfor %}-->
+<!--<input type="submit" value="Vote" />-->
+<!--</form>-->

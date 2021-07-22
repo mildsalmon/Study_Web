@@ -1,9 +1,29 @@
+<!--클래스형 뷰와 연결되는 템플릿-->
+
+{% extends "base_polls.html" %}
+
+{% block content %}
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
     {% for choice in question.choice_set.all %}
-        <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+        <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
     {% endfor %}
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+
+{% endblock content %}
+
+<!--함수형 뷰와 연결되는 템플릿-->
+
+<!--<h1>{{ question.question_text }}</h1>-->
+
+<!--<ul>-->
+<!--    {% for choice in question.choice_set.all %}-->
+<!--        <li>{{ choice.choice_text }} - {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+<!--<a href="{% url 'polls:detail' question.id %}">Vote again?</a>-->
