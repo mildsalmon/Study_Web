@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Question
 from django.utils import timezone
-from .forms import QuestionForm, AnswerForm
+from pybo.forms import QuestionForm, AnswerForm
 from django.core.paginator import Paginator
 
 # Create your views here.
